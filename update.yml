@@ -1,5 +1,6 @@
 permissions: write-all
-name: Run Golang every 5 minutes
+
+name: Build and Run Golang every 5 minutes and on push
 
 on:
   schedule:
@@ -19,14 +20,19 @@ jobs:
         with:
           go-version: '1.22'
 
-      - name: Run Golang script
-        run: go run .
+      - name: Build Golang program
+        run: go build .
+
+      - name: Run Golang program if build succeeded
+        if: success()
+        run: ./ping
 
       - name: Commit changes
+        if: success() && github.event_name == 'schedule'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Auto-commit by GitHub Action"
+          git commit -m "Status data update commit by github actions"
           git push
           
