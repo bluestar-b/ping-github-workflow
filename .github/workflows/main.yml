@@ -2,6 +2,7 @@ permissions: write-all
 name: Run Golang every 5 minutes
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
   push:
