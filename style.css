@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: black;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.dead {
+  color: #FF2525;
+}
+
+.alive {
+  color: #51FF20;
+}
+
+.service-url {
+  color: lightgrey;
+}
+
+.card {
+  border: 2px solid blue;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 1.2em;
+  color: #FFFFFF;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: calc(60% - 16px);
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .card {
+    width: calc(33.33% - 16px);
+  }
+}
