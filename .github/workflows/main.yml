@@ -4,6 +4,7 @@ name: Run Golang every 5 minutes
 on:
   schedule:
     - cron: '*/5 * * * *'
+  push:
 
 jobs:
   build:
