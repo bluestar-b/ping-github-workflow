@@ -1,3 +1,4 @@
+permissions: write-all
 name: Run Python every 5 minutes
 
 on:
