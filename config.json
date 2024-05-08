@@ -1,0 +1,17 @@
+{
+  "timeout": "2s",
+  "links": [
+    {
+      "id": 1,
+      "title": "Somtum Home",
+      "description": "Somtum frontend",
+      "link": "https://somtum.fun"
+    },
+    {
+      "id": 2,
+      "title": "notmycode_status",
+      "description": "Somtum avatar service",
+      "link": "https://a.somtum.fun"
+    }
+  ]
+}
