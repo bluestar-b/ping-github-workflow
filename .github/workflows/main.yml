@@ -1,5 +1,4 @@
-permissions: write-all
-name: Run Golang every 5 minutes
+name: Run Python every 5 minutes
 
 on:
   workflow_dispatch:
@@ -15,13 +14,18 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Setup Go
-        uses: actions/setup-go@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
         with:
-          go-version: '1.22'
+          python-version: '3.x'
 
-      - name: Run Golang script
-        run: go run .
+      - name: Install requests
+        run: python -m pip install requests
+
+      - name: Run Python script
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python ping.py $DISCORD_WEBHOOK_URL
 
       - name: Commit changes
         run: |
